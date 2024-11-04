@@ -4,9 +4,15 @@ Welcome to my DevOps journey! This README is designed to document my path into t
 
 ## Table Of Content:
 
--[Overview](#overview)
--[Goals-and-objectives](#goals-and-objectives)
--[Learning-modules](#learning-modules)
+- [Overview](#overview)
+- [Goals-and-objectives](#goals-and-objectives)
+- [Learning-modules](#learning-modules)
+- [LINUX](#linux)
+  - - [Basic Commands](#basic-commands)
+  - - [File System Structure](#file-system-structure)
+  - - [Permissions and Ownership](#permissions-and-ownership)
+  - - [Shell Scripting](#shell-scripting)
+  - - [Networking](#networking)
 
 
 ## Overview
@@ -29,5 +35,38 @@ The primary goals for my DevOps learning journey include:
 - Learning file handling and manipulation commands (e.g., grep, awk, cut, and find).
 - Bash scripting for automation, loops, and conditional statements.
 - Mastering SSH and secure file transfers for remote operations.
+
+
+### LINUX
+
+#### Basic Commands:
+
+Here are some essential Linux commands to get started:
+- `ls` - Lists files and directories
+- `cd` - Changes the directory
+- `pwd` - Prints the working directory
+- `cp` - Copies files or directories
+- `mv` - Moves or renames files or directories
+- `rm` - Removes files or directories
+
+#### File System Structure:
+
+Understanding the Linux file system hierarchy is key. Here are some important directories:
+- `/` - Root directory
+- `/home` - User home directories
+- `/var` - Variable files, such as logs and databases
+- `/etc` - Configuration files
+- `/usr` - User binaries and applications
+
+
+#### Permissions and Ownership
+
+File permissions in Linux control who can read, write, or execute files. 
+Basic commands for permissions:
+- `chmod` - Changes file permissions
+- `chown` - Changes file owner
+- `chgrp` - Changes group ownership
+
+
 
     - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding</strong>
