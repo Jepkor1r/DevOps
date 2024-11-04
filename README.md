@@ -8,11 +8,11 @@ Welcome to my DevOps journey! This README is designed to document my path into t
 - [Goals-and-objectives](#goals-and-objectives)
 - [Learning-modules](#learning-modules)
 - [LINUX](#linux)
-  - - [Basic Commands](#basic-commands)
-  - - [File System Structure](#file-system-structure)
-  - - [Permissions and Ownership](#permissions-and-ownership)
-  - - [Shell Scripting](#shell-scripting)
-  - - [Networking](#networking)
+  -  [Basic Commands](#basic-commands)
+  -  [File System Structure](#file-system-structure)
+  -  [Permissions and Ownership](#permissions-and-ownership)
+  -  [Shell Scripting](#shell-scripting)
+  -  [Networking](#networking)
 
 
 ## Overview
