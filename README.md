@@ -58,16 +58,32 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 <img src="../Downloads/hierarchy.png" alt="Hierarchy" width="30">
 
 
-- For a deeper dive? Let's goooo
+- For a deeper dive? Let's goooo!
 
-**`/`**             # Root directory
-**├── bin**       # Essential binaries for system and user commands e.g ls, cp, and mv
-**├── boot**      # Boot loader files, including the kernel
+**/**
+
+
+**├── bin**
+
+
+**├── boot**:     #Boot loader files, including the kernel
+
+
 **├── dev**       # Device files, representing hardware (e.g., disks, USB)
+
+
 **├── etc**       # System-wide configuration files
+
+
 **├── home**      # User home directories (e.g., /home/user)
+
+
 **├── lib**       # Shared libraries and modules
+
+
 **├── media**     # Mount point for removable media (CD-ROMs, USBs)
+
+
 **├── mnt**       # Temporary mount point for filesystems
 **├── opt**       # Optional software packages
 **├── proc**      # Virtual filesystem for process and system info
