@@ -39,8 +39,6 @@ The primary goals for my DevOps learning journey include:
 ### LINUX
 <img src="./images/linuxlogo.png" alt="Linux Logo" width="50" height="50"> 
 
-### LINUX
-
 #### Basic Commands:
 
 Here are some essential Linux commands to get started:
