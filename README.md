@@ -55,36 +55,36 @@ Here are some essential Linux commands to get started:
 Understanding the Linux file system hierarchy is key. Here are some important directories:
 
 
-##### <img src="./Downloads/filestructure.png" alt="File Structure" width="30">
+<img src="../Downloads/hierarchy.png" alt="Hierarchy" width="30">
 
 
 - For a deeper dive? Let's goooo
 
-/             # Root directory
-├── bin       # Essential binaries for system and user commands e.g ls, cp, and mv
-├── boot      # Boot loader files, including the kernel
-├── dev       # Device files, representing hardware (e.g., disks, USB)
-├── etc       # System-wide configuration files
-├── home      # User home directories (e.g., /home/user)
-├── lib       # Shared libraries and modules
-├── media     # Mount point for removable media (CD-ROMs, USBs)
-├── mnt       # Temporary mount point for filesystems
-├── opt       # Optional software packages
-├── proc      # Virtual filesystem for process and system info
-├── root      # Home directory for the root user
-├── run       # System information since the last boot
-├── sbin      # System administration binaries
-├── srv       # Service data (e.g., for web servers)
-├── tmp       # Temporary files (cleared on reboot)
-├── usr       # User applications and utilities
-│   ├── bin   # Binaries for user applications
-│   ├── lib   # Libraries for user applications
-│   ├── local # Locally installed software
-│   └── share # Shared resources (e.g., documentation)
-└── var       # Variable files, such as logs and databases
-    ├── log   # Log files
-    ├── tmp   # Temporary files that persist across reboots
-    └── cache # Application cache data
+**`/`**             # Root directory
+**├── bin**       # Essential binaries for system and user commands e.g ls, cp, and mv
+**├── boot**      # Boot loader files, including the kernel
+**├── dev**       # Device files, representing hardware (e.g., disks, USB)
+**├── etc**       # System-wide configuration files
+**├── home**      # User home directories (e.g., /home/user)
+**├── lib**       # Shared libraries and modules
+**├── media**     # Mount point for removable media (CD-ROMs, USBs)
+**├── mnt**       # Temporary mount point for filesystems
+**├── opt**       # Optional software packages
+**├── proc**      # Virtual filesystem for process and system info
+**├── root**      # Home directory for the root user
+**├── run**       # System information since the last boot
+**├── sbin**      # System administration binaries
+**├── srv**       # Service data (e.g., for web servers)
+**├── tmp**       # Temporary files (cleared on reboot)
+**├── usr**       # User applications and utilities
+**│   ├── bin**   # Binaries for user applications
+**│   ├── lib**   # Libraries for user applications
+**│   ├── local** # Locally installed software
+**│   └── share** # Shared resources (e.g., documentation)
+**└── var**       # Variable files, such as logs and databases
+    **├── log**   # Log files
+    **├── tmp**   # Temporary files that persist across reboots
+    **└── cache** # Application cache data
 
 
 #### Permissions and Ownership
