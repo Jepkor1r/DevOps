@@ -37,7 +37,7 @@ The primary goals for my DevOps learning journey include:
 - Mastering SSH and secure file transfers for remote operations.
 
 
-### LINUX <img src="./images/linuxlogo.png" alt="Linux Logo" width="50" height="30">
+<img src="./images/linuxlogo.png" alt="Linux Logo" width="50" height="50"> ### LINUX
 
 #### Basic Commands:
 
@@ -58,7 +58,7 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 <img src="./images/hierarchy.png" alt="Hierarchy" width="600">
 
 
-- For a deeper dive? Let's goooo!
+- <strong><em> For a deeper dive? Let's goooo! </em></strong>
 
 **/**: Root Directory
 
