@@ -37,7 +37,7 @@ The primary goals for my DevOps learning journey include:
 - Mastering SSH and secure file transfers for remote operations.
 
 
-### LINUX ![Linux Logo](./Downloads/linuxlogo.png)
+### LINUX ![Linux Logo](./images/linuxlogo.png)
 
 #### Basic Commands:
 
@@ -55,7 +55,7 @@ Here are some essential Linux commands to get started:
 Understanding the Linux file system hierarchy is key. Here are some important directories:
 
 
-<img src="../Downloads/hierarchy.png" alt="Hierarchy" width="30">
+<img src="../images/hierarchy.png" alt="Hierarchy" width="30">
 
 
 - For a deeper dive? Let's goooo!
@@ -111,28 +111,29 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 **├── usr**: User applications and utilities
 
 
-**│   ├── bin**: Binaries for user applications
+**│         ├── bin**: Binaries for user applications
 
 
-**│   ├── lib**: Libraries for user applications
+**│         ├── lib**: Libraries for user applications
 
 
-**│   ├── local**: Locally installed software
+**│         ├── local**: Locally installed software
 
 
-**│   └── share**: Shared resources (e.g., documentation)
+**│         └── share**: Shared resources (e.g., documentation)
 
 
 **└── var**: Variable files, such as logs and databases
 
 
-    **/`log`**: Log files
+            **├── log**             # Log files
 
 
-    **/`tmp`**: Temporary files that persist across reboots
+            **├── tmp**             # Temporary files that persist across reboots
 
 
-    **/`cache`**: Application cache data
+            **└── cache**           # Application cache data
+
 
 
 #### Permissions and Ownership
