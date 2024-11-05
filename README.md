@@ -37,7 +37,7 @@ The primary goals for my DevOps learning journey include:
 - Mastering SSH and secure file transfers for remote operations.
 
 
-### LINUX <img src="./images/linuxlogo.png" alt="Linux Logo" width="50" height="50">
+### LINUX <img src="./images/linuxlogo.png" alt="Linux Logo" width="20" height="20">
 
 #### Basic Commands:
 
