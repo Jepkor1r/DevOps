@@ -36,8 +36,10 @@ The primary goals for my DevOps learning journey include:
 - Bash scripting for automation, loops, and conditional statements.
 - Mastering SSH and secure file transfers for remote operations.
 
+### LINUX
+<img src="./images/linuxlogo.png" alt="Linux Logo" width="50" height="50"> 
 
-<img src="./images/linuxlogo.png" alt="Linux Logo" width="50" height="50"> ### LINUX
+### LINUX
 
 #### Basic Commands:
 
