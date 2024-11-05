@@ -37,7 +37,7 @@ The primary goals for my DevOps learning journey include:
 - Mastering SSH and secure file transfers for remote operations.
 
 
-### LINUX <img src="./images/linuxlogo.png" alt="Linux Logo" width="50" height="80">
+### LINUX <img src="./images/linuxlogo.png" alt="Linux Logo" width="50" height="30">
 
 #### Basic Commands:
 
@@ -55,7 +55,7 @@ Here are some essential Linux commands to get started:
 Understanding the Linux file system hierarchy is key. Here are some important directories:
 
 
-<img src="./images/hierarchy.png" alt="Hierarchy" width="500">
+<img src="./images/hierarchy.png" alt="Hierarchy" width="600">
 
 
 - For a deeper dive? Let's goooo!
@@ -63,64 +63,64 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 **/**: Root Directory
 
 
-**|    ├── bin**: Essential binaries for system and user commands e.g ls, mv, and cp
+**├── bin**: Essential binaries for system and user commands e.g ls, mv, and cp
 
 
-**|    ├── boot**: Boot loader files, including the kernel
+**├── boot**: Boot loader files, including the kernel
 
 
-**|    ├── dev**: Device files, representing hardware (e.g., disks, USB)
+**├── dev**: Device files, representing hardware (e.g., disks, USB)
 
 
-**|    ├── etc**: System-wide configuration files
+**├── etc**: System-wide configuration files
 
 
-**|    ├── home**: User home directories (e.g., /home/user)
+**├── home**: User home directories (e.g., /home/user)
 
 
-**|    ├── lib**: Shared libraries and modules
+**├── lib**: Shared libraries and modules
 
 
-**|    ├── media**: Mount point for removable media (CD-ROMs, USBs)
+**├── media**: Mount point for removable media (CD-ROMs, USBs)
 
 
-**|    ├── mnt**: Temporary mount point for filesystems
+**├── mnt**: Temporary mount point for filesystems
 
 
-**|    ├── opt**: Optional software packages
+**├── opt**: Optional software packages
 
 
-**|    ├── proc**: Virtual filesystem for process and system info
+**├── proc**: Virtual filesystem for process and system info
 
 
-**|    ├── root**: Home directory for the root user
+**├── root**: Home directory for the root user
 
 
-**|    ├── run**: System information since the last boot
+**├── run**: System information since the last boot
 
 
-**|    ├── sbin**: System administration binaries
+**├── sbin**: System administration binaries
 
 
-**|    ├── srv**: Service data (e.g., for web servers)
+**├── srv**: Service data (e.g., for web servers)
 
 
-**|    ├── tmp**: Temporary files (cleared on reboot)
+**├── tmp**: Temporary files (cleared on reboot)
 
 
-**|    ├── usr**: User applications and utilities
+**├── usr**: User applications and utilities
 
 
-**│            ├── bin**: Binaries for user applications
+**│         ├── bin**: Binaries for user applications
 
 
-**│            ├── lib**: Libraries for user applications
+**│         ├── lib**: Libraries for user applications
 
 
-**│            ├── local**: Locally installed software
+**│         ├── local**: Locally installed software
 
 
-**│            └── share**: Shared resources (e.g., documentation)
+**│         └── share**: Shared resources (e.g., documentation)
 
 
 **└── var**: Variable files, such as logs and databases
