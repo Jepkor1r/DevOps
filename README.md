@@ -10,6 +10,7 @@ Welcome to my DevOps journey! This README is designed to document my path into t
 - [LINUX](#linux)
   -  [Basic Commands](#basic-commands)
   -  [File System Structure](#file-system-structure)
+  -  [Core Components of Linux: From Kernel to Command Line](#core-components-of-linux)
   -  [Permissions and Ownership](#permissions-and-ownership)
   -  [Shell Scripting](#shell-scripting)
   -  [Networking](#networking)
@@ -55,7 +56,7 @@ Here are some essential Linux commands to get started:
 Understanding the Linux file system hierarchy is key. Here are some important directories:
 
 
-<img src="./images/hierarchy.png" alt="Hierarchy" width="600">
+<img src="./images/hierarchy.png" alt="Visual representation of Linux file system hierarchy" width="600">
 
 
 - <strong><em> For a deeper dive? Let's goooo! </em></strong>
@@ -136,6 +137,72 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 
 
 
+
+#### Core Components Of Linux: From Kernel to Command Line
+
+<em> Wanna understand linux system architecture?</em><br>
+<strong> Let's dive in! <strong>
+
+1. Kernel
+- Is the core of the opersating system.
+- <bold> Acts a bride between hardware and software.</bold>
+- Handles low-level tasks like hardware communication and system resource management.
+- Manages process scheduling, memory allocations and peripheral devices.
+- Located in the `/boot` directory of the linux file system.
+
+2. Boot Loader
+- First software to run when a computer starts.
+- Primary task is to load the kernel into the memory during system startups.
+- Allows users to choose different kernel versions or OS to boot from.
+- Most commonly used boot loader in linux is GRUB(Grand Unified Bootloader)
+- Located in the `/boot` directory of the linux system.
+
+3. File System
+- The file system of linux is in a hierarchical structure, starting from the `/` (root directory).
+- It organizes all directories such as `/bin`, files, applications and configurations.
+- <em> I beat you've  already seen the Visual Representation of the Linux File System </em>
+
+4. Linux Distribution
+- <em> Heard of linux distro'? </em><br>
+- Let's put it as complete OS that includes linux kernel, essential software packages and packet management tools.
+- Popular ones include: Ubuntu, Fedora, Debian, Kali, CentOs, Arch.
+- Distributions vary in package management, default software, and configurations.
+- Package managers like APT (Debian-based), YUM (Red Hat-based), or Pacman (Arch Linux) simplify software installation and management.
+- Tyically within `/usr`, `/etc`, `/var`
+
+5. X Windows System
+- <strong> Also known as x11 </strong>
+- Software framework that enables the display of graphical user interfaces (GUIs) on Linux.
+- In other words, it acts as a <i> "back-end" </i> that handles communication between hardware and graphical applications.
+- Handles the windowing system, input devices like the mouse and keyboard, and display output.
+- Examples: Xorg, i3, Openbox
+- Typically found in `/etc/X11`, `/usr/share/X11`, and `/usr/bin`
+
+6. Services
+- They are background programs (daemons) that run to provide critical functionalities
+- They are managed by the system's initialization tools like systemd or init.
+- Located in `/etc/init.d/`, `/etc/systemd/`, `/usr/lib/systemd/system/`
+
+7. Desktop Environment
+- Provides the graphical user interface that includes windows manager, menus, file manager and panels.
+- In other words, it acts as a <i> "front-end" </i> that provides a full GUI experience with tools and utilities.
+- Popular DEs include GNOME, KDE Plasma, and XFCE.
+- Can be customized with themes, widgets, and additional applications.
+- Found in directories such as `/usr/share/`, `/etc/xdg/`, and `/home/user/.config`
+
+8. Command Line
+- Primary interface for interacting with Linux using text commands.
+- Allows users to execute system commands, run scripts, and manage processes.
+- Powerful tool for automation and managing the system
+- Common shells include Bash, Zsh, and Fish
+- Located in /bin, /usr/bin, /usr/local/bin
+
+<strong> <em> Did you Know? </em> </strong>
+There's a unique relationship between <em> X Window System </em> and <em> Desktop Environment</em> <bold>:)</bold>
+
+
+<q>Without the <strong> X Window System </strong>, Desktop Environments cannot function, as they rely on X11 to communicate with the hardware. Similarly, without a <strong> Desktop Environment </strong>, the X Window System is just a raw framework, making it challenging for users to interact with the system <strong> ---unlessyou're an expert in configuring graphical applications</strong> </q>
+
 #### Permissions and Ownership
 
 File permissions in Linux control who can read, write, or execute files. 
@@ -146,4 +213,4 @@ Basic commands for permissions:
 
 
 
-    - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding</strong>
+    - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
