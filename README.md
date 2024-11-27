@@ -196,11 +196,9 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 - Common shells include Bash, Zsh, and Fish
 - Located in /bin, /usr/bin, /usr/local/bin
 
-<q><strong> <em> Did you Know? </em> </strong><br>
+<p><q><strong> <em> Did you Know? </em> </strong><br>
 There's a unique relationship between <strong> X Window System </strong> and <strong> Desktop Environment!</strong><br>
-
-
-Without the <strong> X Window System </strong>, Desktop Environments cannot function, as they rely on X11 to communicate with the hardware. Similarly, without a <strong> Desktop Environment </strong>, the X Window System is just a raw framework, making it challenging for users to interact with the system <strong> ---unlessyou're an expert in configuring graphical applications</strong> </q>
+Without the <strong> X Window System </strong>, Desktop Environments cannot function, as they rely on X11 to communicate with the hardware. Similarly, without a <strong> Desktop Environment </strong>, the X Window System is just a raw framework, making it challenging for users to interact with the system <strong> ---unlessyou're an expert in configuring graphical applications</strong> </q></p>
 
 #### Permissions and Ownership
 
