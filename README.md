@@ -140,8 +140,7 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 
 #### Core Components Of Linux: From Kernel to Command Line
 
-<em> Wanna understand linux system architecture?</em><br>
-<strong> Let's dive in! <strong>
+<em> Wanna understand linux system architecture?</em><strong> Let's dive in! </strong>
 
 1. Kernel
 - Is the core of the opersating system.
