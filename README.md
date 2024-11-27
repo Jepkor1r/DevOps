@@ -143,8 +143,8 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 <em> Wanna understand linux system architecture?</em><strong> Let's dive in! </strong>
 
 1. Kernel
-- Is the core of the opersating system.
-- <bold> Acts a bride between hardware and software.</bold>
+- Is the core of the operating system.
+- <strong> Acts a bride between hardware and software.</strong>
 - Handles low-level tasks like hardware communication and system resource management.
 - Manages process scheduling, memory allocations and peripheral devices.
 - Located in the `/boot` directory of the linux file system.
@@ -162,7 +162,7 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 - <em> I beat you've  already seen the Visual Representation of the Linux File System </em>
 
 4. Linux Distribution
-- <em> Heard of linux distro'? </em><br>
+   <em> Heard of linux distro'? </em>
 - Let's put it as complete OS that includes linux kernel, essential software packages and packet management tools.
 - Popular ones include: Ubuntu, Fedora, Debian, Kali, CentOs, Arch.
 - Distributions vary in package management, default software, and configurations.
@@ -196,11 +196,11 @@ Understanding the Linux file system hierarchy is key. Here are some important di
 - Common shells include Bash, Zsh, and Fish
 - Located in /bin, /usr/bin, /usr/local/bin
 
-<strong> <em> Did you Know? </em> </strong>
-There's a unique relationship between <em> X Window System </em> and <em> Desktop Environment</em> <bold>:)</bold>
+<q><strong> <em> Did you Know? </em> </strong><br>
+There's a unique relationship between <strong> X Window System </strong> and <strong> Desktop Environment!</strong><br>
 
 
-<q>Without the <strong> X Window System </strong>, Desktop Environments cannot function, as they rely on X11 to communicate with the hardware. Similarly, without a <strong> Desktop Environment </strong>, the X Window System is just a raw framework, making it challenging for users to interact with the system <strong> ---unlessyou're an expert in configuring graphical applications</strong> </q>
+Without the <strong> X Window System </strong>, Desktop Environments cannot function, as they rely on X11 to communicate with the hardware. Similarly, without a <strong> Desktop Environment </strong>, the X Window System is just a raw framework, making it challenging for users to interact with the system <strong> ---unlessyou're an expert in configuring graphical applications</strong> </q>
 
 #### Permissions and Ownership
 
