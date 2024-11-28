@@ -208,6 +208,17 @@ Basic commands for permissions:
 - `chown` - Changes file owner
 - `chgrp` - Changes group ownership
 
+#### Script Parameters
+- Often, we need to pass parameter values to a script such as filename, date etc.
+ 
+- Within a script, the parameter or an argument is represented with a<strong>`$` and a number or special character.</strong>
 
+<strong> <em> Parameters and their meanings</em> </strong>
+
+- `$0` ---> Script name
+- `$1` --->  First Parameter
+- `$2`, `$3` ---> Second Parameter, Third Parameter ...
+- `$*` ---> All parameters
+- `$#` ---> Number of Arguments
 
     - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
