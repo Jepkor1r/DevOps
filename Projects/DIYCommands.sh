@@ -23,3 +23,12 @@ find . -name "*.txt" -ls
 
 #checks for execution status: success is 0 whie failure is any non-zero value. Non -existing file returns 2.
 echo $?
+
+#outputs the default shell for the current user
+echo $SHELL
+
+#variable
+myname="Lagat"
+echo "Hello $myname!"
+
+
