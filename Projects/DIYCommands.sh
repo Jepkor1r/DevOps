@@ -31,4 +31,13 @@ echo $SHELL
 myname="Lagat"
 echo "Hello $myname!"
 
+#$() enclosing inner command---> Command subsitution
+#uname is used to show system info, -r specifically outputs the kernel release version.
+ls /lib/modules/$(uname -r)/
+
+#exporting variable
+export VAR=value
+
+export | head -20
+
 
