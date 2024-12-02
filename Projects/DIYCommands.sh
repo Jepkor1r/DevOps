@@ -40,4 +40,12 @@ export VAR=value
 
 export | head -20
 
+#math functions
+expr 10 + 30
+
+expr 10 \* 30
+
+num1=10
+num2=10
+expr $num1 - $num2
 
