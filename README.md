@@ -221,4 +221,14 @@ Basic commands for permissions:
 - `$*` ---> All parameters
 - `$#` ---> Number of Arguments
 
+#### Networking
+
+1. Testing and debugging
+
+- `ping`: checks connctivity to.a host
+- `Traceroute` : Trace the path packets take to a host.
+- `Netcat (nc)` : Test port connectivity or transfer data
+- `tcpdump` : Capture and analyze network packets.
+- `nmap` : Scan networks and services
+
     - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
