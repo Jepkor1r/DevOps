@@ -231,4 +231,13 @@ Basic commands for permissions:
 - `tcpdump` : Capture and analyze network packets.
 - `nmap` : Scan networks and services
 
+2. OSI Model Mnemonic
+- All ----------> Application Layer
+- People -------> Presenyation Layer
+- Seem ---------> Session Layer
+- To -----------> Transport Layer
+- Need ---------> Network Layer
+- Data ---------> Data Link Layer
+- Processing ---> Physical layer
+
     - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
