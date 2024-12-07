@@ -49,3 +49,5 @@ num1=10
 num2=10
 expr $num1 - $num2
 
+#fetches real time weather info( /Nairobi, to append city )
+curl wttr.in/Nairobi
