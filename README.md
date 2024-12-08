@@ -233,7 +233,7 @@ Basic commands for permissions:
 
 2. OSI Model Mnemonic
 - All ----------> Application Layer
-- People -------> Presenyation Layer
+- People -------> Presentation Layer
 - Seem ---------> Session Layer
 - To -----------> Transport Layer
 - Need ---------> Network Layer
