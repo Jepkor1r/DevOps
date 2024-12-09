@@ -240,4 +240,25 @@ Basic commands for permissions:
 - Data ---------> Data Link Layer
 - Processing ---> Physical layer
 
-    - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
+3. Networking Sharing
+
+<em> Note: scp stands for secure  copy </em>
+
+<strong> To copy a file from local host to a remote host </strong>
+
+`scp myfile.txt username@remotehost.com:/remote/`
+
+
+<strong> To copy a file from a remote host to your local host </strong>
+
+`scp username@remotehost.com:/remote/directory/myfile.txt /local/directory`
+
+<strong> To copy over a directory from your local host to a remote host </strong>
+
+`scp -r mydir username@remotehost.com:/remote/directory`
+
+<em> Note: rsync stands for remote synchronization  </em>
+<strong> There's major difference between rsync and scp, although both of them achieve copying of files.<br> Rsync allows copying of files from part that didn't get copied instead of recopying 
+
+
+- <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
