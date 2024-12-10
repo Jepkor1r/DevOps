@@ -242,23 +242,40 @@ Basic commands for permissions:
 
 3. Networking Sharing
 
-<em> Note: scp stands for secure  copy </em>
+- i. scp
 
-<strong> To copy a file from local host to a remote host </strong>
+<em> ~ Note: scp stands for secure  copy </em>
+
+- <strong> To copy a file from local host to a remote host </strong>
 
 `scp myfile.txt username@remotehost.com:/remote/`
 
 
-<strong> To copy a file from a remote host to your local host </strong>
+- <strong> To copy a file from a remote host to your local host </strong>
 
 `scp username@remotehost.com:/remote/directory/myfile.txt /local/directory`
 
-<strong> To copy over a directory from your local host to a remote host </strong>
+- <strong> To copy over a directory from your local host to a remote host </strong>
 
 `scp -r mydir username@remotehost.com:/remote/directory`
 
-<em> Note: rsync stands for remote synchronization  </em>
-<strong> There's major difference between rsync and scp, although both of them achieve copying of files.<br> Rsync allows copying of files from part that didn't get copied instead of recopying 
+- ii. rsync
+
+<em> ~ Note: rsync stands for remote synchronization  </em>
+
+- <strong> There's major difference between rsync and scp, although both of them achieve copying of files.<br> Rsync allows copying of files from part that didn't get copied instead of recopying whole file afresh</strong>
+
+- Ideal for directory synchronization remotely and locally, data backups, large data transfers, etc.
+
+- <strong> Copy/sync files on the same host </strong>
+`rsync -zvr /my/local/directory/one /my/local/directory/two`
+
+- <strong> Copy/sync files to local host from a remote host </strong>
+`rsync /local/directory username@remotehost.com:/remote/directory`
+
+- <strong> Copy/sync files to a remote host from a local host </strong>
+`rsync username@remotehost.com:/remote/directory /local/directory`
+
 
 
 - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
