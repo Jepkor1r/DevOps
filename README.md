@@ -277,9 +277,9 @@ Basic commands for permissions:
 `rsync username@remotehost.com:/remote/directory /local/directory`
 
 - <em> Common rsync options: <br>
-☆ v - verbose output
-☆ r - recursive into directories
-☆ h - human readable output
+☆ v - verbose output <br>
+☆ r - recursive into directories <br>
+☆ h - human readable outputt<br>
 ☆ z - compressed for easier transfer, great for slow connection
 </em>
 
