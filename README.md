@@ -223,13 +223,19 @@ Basic commands for permissions:
 
 #### Networking
 
-1. Testing and debugging
+1. Monitoring, Testing and Debugging
 
 - `ping`: checks connctivity to.a host
-- `Traceroute` : Trace the path packets take to a host.
-- `Netcat (nc)` : Test port connectivity or transfer data
+- `Traceroute` : Trace the path which packets takes to reach a destination host.
+- `Netcat (nc)` : Display all active connections and routing tables.
 - `tcpdump` : Capture and analyze network packets.
-- `nmap` : Scan networks and services
+- `nmap` : Scans open ports on a n/w.
+- `ip addr show` : View ip address
+- `ip route show` : View routing information.
+- `ethtool` : Queries n/w interfaces. Can also set various parameters such as speed
+- `iptraf` : Monitors n/w traffic in text mode.
+- `mtr` : Combines functionality of `ping` and `traceroute`. Gives a continuously updated display.
+- `dig` : Tests DNS workings. A good replacenent of `host` and nslookup`
 
 2. OSI Model Mnemonic
 - All ----------> Application Layer
