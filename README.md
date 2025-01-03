@@ -248,7 +248,7 @@ Basic commands for permissions:
 
 <strong>3. Networking Sharing</strong>
 
-           i. scp
+      i. scp
 
 <em> ~ Note: scp stands for secure  copy </em>
 
@@ -265,7 +265,7 @@ Basic commands for permissions:
 
 `scp -r mydir username@remotehost.com:/remote/directory`
 
- ii. rsync
+       ii. rsync
 
 <em> ~ Note: rsync stands for remote synchronization  </em>
 
