@@ -223,7 +223,7 @@ Basic commands for permissions:
 
 #### Networking
 
-1. Monitoring, Testing and Debugging
+<strong>1. Monitoring, Testing and Debugging</strong>
 
 - `ping`: checks connctivity to.a host
 - `Traceroute` : Trace the path which packets takes to reach a destination host.
@@ -235,9 +235,9 @@ Basic commands for permissions:
 - `ethtool` : Queries n/w interfaces. Can also set various parameters such as speed
 - `iptraf` : Monitors n/w traffic in text mode.
 - `mtr` : Combines functionality of `ping` and `traceroute`. Gives a continuously updated display.
-- `dig` : Tests DNS workings. A good replacenent of `host` and nslookup`
+- `dig` : Tests DNS workings. A good replacenent of `host` and `nslookup`
 
-2. OSI Model Mnemonic
+<strong>2. OSI Model Mnemonic</strong>
 - All ----------> Application Layer
 - People -------> Presentation Layer
 - Seem ---------> Session Layer
@@ -246,9 +246,9 @@ Basic commands for permissions:
 - Data ---------> Data Link Layer
 - Processing ---> Physical layer
 
-3. Networking Sharing
+<strong>3. Networking Sharing</strong>
 
- i. scp
+           i. scp
 
 <em> ~ Note: scp stands for secure  copy </em>
 
