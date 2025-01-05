@@ -14,7 +14,7 @@ Welcome to my DevOps journey! This README is designed to document my path into t
   -  [Permissions and Ownership](#permissions-and-ownership)
   -  [Shell Scripting](#shell-scripting)
   -  [Networking](#networking)
-
+- [VERSION CONTROL SYSTEM](#version-control-system)
 
 ## Overview
 DevOps, short for Development and Operations, is a collaborative approach that bridges the gap between software development and IT operations. It aims to streamline the process of delivering high-quality software, automating workflows, and maintaining systems at scale. In this journey, I explore the core components of DevOps, from foundational Linux skills to advanced automation, continuous integration and delivery, and cloud infrastructure management.
@@ -288,5 +288,8 @@ Basic commands for permissions:
 ☆ h - human readable outputt<br>
 ☆ z - compressed for easier transfer, great for slow connection
 </em>
+
+### VERSION CONTROL SYSTEM
+
 
 - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
