@@ -292,7 +292,7 @@ Basic commands for permissions:
 ### VERSION CONTROL SYSTEM
 
 This got my eyes! Amazing content here:
-<a href="topics/git/README.md">
+<a href="https://github.com/bregman-arie/devops-exercises/blob/master/topics/git/README.md"> Click Here </a>
 
 
 - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
