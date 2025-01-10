@@ -291,5 +291,8 @@ Basic commands for permissions:
 
 ### VERSION CONTROL SYSTEM
 
+This got my eyes! Amazing content here:
+<a href="topics/git/README.md">
+
 
 - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
