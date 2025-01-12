@@ -18,8 +18,16 @@ ls /fake/directory > file.txt 2>&1
 #Shortcut for both standard error and standard output
 ls /fake/directory &> file.txt
 
+
+
 #find(searches), .(current directory), -name "*.txt"(file names that ends with .txt, *(all)), ls(list in long format).
 find . -name "*.txt" -ls
+
+
+#Alias is a new command thats acts as an  abbreviation of the longer command
+#alias new-name='command-value'
+alias l='ls -l'
+alias today='date +"%A, %B %-d, %Y"'
 
 #checks for execution status: success is 0 whie failure is any non-zero value. Non -existing file returns 2.
 echo $?
@@ -31,7 +39,7 @@ echo $SHELL
 myname="Lagat"
 echo "Hello $myname!"
 
-#$() enclosing inner command---> Command subsitution
+#$() enclosing inner command---> Command substitution
 #uname is used to show system info, -r specifically outputs the kernel release version.
 ls /lib/modules/$(uname -r)/
 
@@ -39,6 +47,13 @@ ls /lib/modules/$(uname -r)/
 export VAR=value
 
 export | head -20
+
+#Path is the list of directories; To view list of directories > echo $PATH
+echo $PATH
+
+#Add directory to your own path
+export PATH=$PATH:/path/to/add_directory
+
 
 #math functions
 expr 10 + 30
