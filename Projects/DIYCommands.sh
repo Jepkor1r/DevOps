@@ -27,7 +27,12 @@ find . -name "*.txt" -ls
 #Alias is a new command thats acts as an  abbreviation of the longer command
 #alias new-name='command-value'
 alias l='ls -l'
+
+#A->Days of the week, B->Month, d->day of the month, Y->Year
 alias today='date +"%A, %B %-d, %Y"'
+
+#X->time in 24h, Y->Year, Z->Time zone
+alias time='date +"%X, %Y, %Z"'
 
 #checks for execution status: success is 0 whie failure is any non-zero value. Non -existing file returns 2.
 echo $?
