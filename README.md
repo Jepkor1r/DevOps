@@ -14,7 +14,7 @@ Welcome to my DevOps journey! This README is designed to document my path into t
   -  [Permissions and Ownership](#permissions-and-ownership)
   -  [Shell Scripting](#shell-scripting)
   -  [Networking](#networking)
-
+- [VERSION CONTROL SYSTEM](#version-control-system)
 
 ## Overview
 DevOps, short for Development and Operations, is a collaborative approach that bridges the gap between software development and IT operations. It aims to streamline the process of delivering high-quality software, automating workflows, and maintaining systems at scale. In this journey, I explore the core components of DevOps, from foundational Linux skills to advanced automation, continuous integration and delivery, and cloud infrastructure management.
@@ -221,4 +221,78 @@ Basic commands for permissions:
 - `$*` ---> All parameters
 - `$#` ---> Number of Arguments
 
-    - <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
+#### Networking
+
+<strong>1. Monitoring, Testing and Debugging</strong>
+
+- `ping`: checks connctivity to.a host
+- `Traceroute` : Trace the path which packets takes to reach a destination host.
+- `Netcat (nc)` : Display all active connections and routing tables.
+- `tcpdump` : Capture and analyze network packets.
+- `nmap` : Scans open ports on a n/w.
+- `ip addr show` : View ip address
+- `ip route show` : View routing information.
+- `ethtool` : Queries n/w interfaces. Can also set various parameters such as speed
+- `iptraf` : Monitors n/w traffic in text mode.
+- `mtr` : Combines functionality of `ping` and `traceroute`. Gives a continuously updated display.
+- `dig` : Tests DNS workings. A good replacenent of `host` and `nslookup`
+
+<strong>2. OSI Model Mnemonic</strong>
+- All ----------> Application Layer
+- People -------> Presentation Layer
+- Seem ---------> Session Layer
+- To -----------> Transport Layer
+- Need ---------> Network Layer
+- Data ---------> Data Link Layer
+- Processing ---> Physical layer
+
+<strong>3. Networking Sharing</strong>
+
+      i. scp
+
+<em> ~ Note: scp stands for secure  copy </em>
+
+- <strong> To copy a file from local host to a remote host </strong>
+
+`scp myfile.txt username@remotehost.com:/remote/`
+
+
+- <strong> To copy a file from a remote host to your local host </strong>
+
+`scp username@remotehost.com:/remote/directory/myfile.txt /local/directory`
+
+- <strong> To copy over a directory from your local host to a remote host </strong>
+
+`scp -r mydir username@remotehost.com:/remote/directory`
+
+       ii. rsync
+
+<em> ~ Note: rsync stands for remote synchronization  </em>
+
+- <strong> There's major difference between rsync and scp, although both of them achieve copying of files.<br> Rsync allows copying of files from part that didn't get copied instead of recopying whole file afresh</strong>
+
+- Ideal for directory synchronization remotely and locally, data backups, large data transfers, etc.
+
+- <strong> Copy/sync files on the same host </strong>
+`rsync -zvr /my/local/directory/one /my/local/directory/two`
+
+- <strong> Copy/sync files to local host from a remote host </strong>
+`rsync /local/directory username@remotehost.com:/remote/directory`
+
+- <strong> Copy/sync files to a remote host from a local host </strong>
+`rsync username@remotehost.com:/remote/directory /local/directory`
+
+- <em> Common rsync options: <br>
+☆ v - verbose output <br>
+☆ r - recursive into directories <br>
+☆ h - human readable outputt<br>
+☆ z - compressed for easier transfer, great for slow connection
+</em>
+
+### VERSION CONTROL SYSTEM
+
+This got my eyes! Amazing content here:
+<a href="https://github.com/bregman-arie/devops-exercises/blob/master/topics/git/README.md"> Click Here </a>
+
+
+- <em> I'll keep updating as we learn and grow together!</em> <strong>Happy Coding.</strong>
