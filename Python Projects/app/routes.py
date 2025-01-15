@@ -2,9 +2,9 @@
 
 from app import app
 
-# We then use the route() decorator to tell Flask what URL should trigger our function.
-# Define a route using the `route()` decorator.
+# Define a route using the `app.route()` decorator.
 # The decorator associates a URL path ('/' or '/index') with the `index` function below.
+# Either of the url will trigger the same function, making the routes more flexible and user-friendly.
 
 @app.route('/')  # Maps the root URL (http://localhost:5000/) to this function.
 
