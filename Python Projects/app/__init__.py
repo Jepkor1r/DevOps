@@ -12,5 +12,5 @@ from flask import Flask
 app = Flask(__name__)
 
 # routes defines url endpoints of the application
-# Using app instance we import routes, allowing Flask class to know which function to be executed when a specific url is accessed
+# Using app package we import routes, allowing Flask class to know which function to be executed when a specific url is accessed
 from app import routes
