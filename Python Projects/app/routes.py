@@ -14,4 +14,14 @@ from app import app
 # It returns the string "Hello World!" to be displayed in the browser.
 
 def index():
-    return "Hello World!"
+    user = {'username': 'Miguel'}
+    #return "Hello World!"
+    return """
+        <html>
+        <head>
+            <title>Home Page - Microblog</title>
+        </head>
+        <body>
+            <h1>Hello, ''' + user['username'] + '''!</h1>
+        </body>
+        </html>"""
