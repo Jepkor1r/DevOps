@@ -1,0 +1,4 @@
+- Summary of what is hapenning in the terminal
+- `wget` - command used for downloading files from the internet 
+- - wget [URL]
+- `find` - command used for searching files in a directory hierarchy
