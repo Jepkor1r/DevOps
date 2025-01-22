@@ -1,5 +1,8 @@
-# Import the Flask application instance `app` from the `app` package.
+#Rendering means converting a template into a compete HTML page
+#render_template is a function in flask framework that takes a template filename and a variable list of template arguments, and returns the same template, but with all the placeholders in it replaced with actual values
+from flask import render_template
 
+# Import the Flask application instance `app` from the `app` package.
 from app import app
 
 # Define a route using the `app.route()` decorator.
@@ -14,14 +17,5 @@ from app import app
 # It returns the string "Hello World!" to be displayed in the browser.
 
 def index():
-    user = {'username': 'Miguel'}
-    #return "Hello World!"
-    return """
-        <html>
-        <head>
-            <title>Home Page - Microblog</title>
-        </head>
-        <body>
-            <h1>Hello, ''' + user['username'] + '''!</h1>
-        </body>
-        </html>"""
+    user = {'username': 'Lagat'}
+    return render_template('index.html', title='Home', user=user)
