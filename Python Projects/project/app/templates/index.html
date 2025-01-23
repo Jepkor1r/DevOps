@@ -2,7 +2,11 @@
 <html>
 <head>
     {# {{}} placeholders represent parts of the page that are variable and will only be known during runtime #}
+    {% if title %}
     <title>{{ title }} - Microblog</title>
+    {% else %}
+    <title>Welcome to Microblog!</title>
+    {% endif %}
 </head>
 <body>
     <h1>Hello, {{ user.username }}!</h1>

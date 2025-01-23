@@ -18,4 +18,4 @@ from app import app
 
 def index():
     user = {'username': 'Lagat'}
-    return render_template('index.html', title='Home', user=user)
+    return render_template('index.html', user=user)
