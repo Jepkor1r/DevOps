@@ -17,5 +17,25 @@ from app import app
 # It returns the string "Hello World!" to be displayed in the browser.
 
 def index():
+    # Define a `user` dictionary with a `username` key.
+    # This simulates a logged-in user by providing their username.
     user = {'username': 'Lagat'}
-    return render_template('index.html', user=user)
+
+    # Create a list of `posts`, where each post is a dictionary.
+    # Each dictionary contains an `author` (another dictionary with `username`)
+    # and a `body` (the content of the post).
+    posts = [
+        {
+            'author' : {'username' : 'Joy'},
+            'body' : 'Beautiful day in Nairobi!'
+        },
+        {
+            'author' : {'username' : 'Jepkorir'},
+            'body' : 'Comment ca va?'
+        }
+    ]
+    
+    # Call the `render_template` function to render the `index.html` template.
+    # Pass `user` and `posts` as template arguments.
+    # These variables can be accessed in the `index.html` file using placeholders.
+    return render_template('index.html', user=user, posts=posts)
