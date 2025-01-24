@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {#I WILL COMMENT OUT THIS PART(KINDA REMOVE) SINCE base template WILL TAKE CARE OF THE GENERAL PAGE STRUCTURE #}
     {# The `{{}}` placeholders are used to inject dynamic content into the page. These values are set during runtime
     by the Flask app when it renders this template. #}
     {# Conditional logic to check if a `title` variable is passed to the template. #}
 
     {# If `title` exists, it will be displayed along with "- Microblog" in the browser's tab. #}
-    {% if title %}
-    <title>{{ title }} - Microblog</title>
+    {# {% if title %} %}
+    {# <title>{{ title }} - Microblog!</title> #}
 
     {# If `title` is not provided, a default title "Welcome to Microblog!" will be shown instead. #}
-    {% else %}
-    <title>Welcome to Microblog!</title>
-    {% endif %}
-
+    {# {% else %} #}
+    {# <title>Welcome to Microblog!</title> #}
+    {# {% endif %} #}
 </head>
 <body>
-    {# Display a personalized greeting using the `user.username` variable passed to the template. #}
-    <h1>Hello, {{ user.username }}!</h1>
+    {% extends "base.html" %}
 
-    {# A for loop  to iterate over a list of posts. Each post is expected to have an `author` (who wrote the post)
+    {% block content %}
+        {# Display a personalized greeting using the `user.username` variable passed to the template. #}
+        <h1>Hello, {{ user.username }}!</h1>
+
+        {# A for loop  to iterate over a list of posts. Each post is expected to have an `author` (who wrote the post)
         and a `body` (the content of the post). #}
-    {% for post in posts%}
+        {% for post in posts%}
 
-    {# Display the username of the post's author and the content of the post. #}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
-    {# The `for` loop must always end with `{% endfor %}` to close the block. Without this, a syntax error will occur. #}
-</body>
+        {# Display the username of the post's author and the content of the post. #}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+        {# The `for` loop must always end with `{% endfor %}` to close the block. Without this, a syntax error will occur. #}
+    {% endblock %}
+    </body>
 </html>
