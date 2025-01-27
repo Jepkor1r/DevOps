@@ -6,11 +6,14 @@
 
 from flask import Flask
 
+from config import Config
+
 #Next, we create an instance of that class(object)-> app
 #__name__ is a convenient shortcut for the name of the application's package or module.
 
 app = Flask(__name__)
 
+app.config.from_object(Config)
 # routes defines url endpoints of the application
 # Using app package we import routes, allowing Flask class to know which function to be executed when a specific url is accessed
 from app import routes
