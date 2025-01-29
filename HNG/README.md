@@ -11,7 +11,9 @@ During my DevOps internship, I had the opportunity to work on installing and con
 `sudo apt update`
 `sudo apt install nginx`
 
-- Starting Nginx: After installation, type `localhost` in your browser. If you are getting <img src="./img1.png"> Yaay! You've successfully installed nginx. 
+- Starting Nginx: After installation, type `localhost` in your browser. If you are getting:
+ <img src="./img1.png"> 
+ <em>Yaay! You've successfully installed nginx.</em>
 
 - Creating HTML page: Still on your terminal, change directory to `/var/www/html` then create an index.html file.
 
