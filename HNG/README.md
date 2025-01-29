@@ -38,37 +38,38 @@ During my DevOps internship, I had the opportunity to work on installing and con
 
 
 <strong> 💡 Challenges and Solutions:</strong>
+
 🔴 Issue: Symbolic Link & Accessing Default File.
 
-While configuring Nginx, I ran into a symbolic link issue that prevented me from accessing the default configuration file. At first, I thought default was a directory:
+- While configuring Nginx, I ran into a symbolic link issue that prevented me from accessing the default configuration file. At first, I thought default was a directory:
 
 <img src="./img3.png">
 
-However, when I tried to navigate into /etc/nginx/sites-available/default, I got the following error:
+- However, when I tried to navigate into /etc/nginx/sites-available/default, I got the following error:
 
 
 <img src="./img4.png">
 
 
-The same issue occurred when I tried to cd into default directly:
+- The same issue occurred when I tried to cd into default directly:
 
 
 <img src="./img5.png">
 
 
-After investigating, I realized that default wasn't a directory but a plain configuration file. The correct way to interact with it was by opening it with a text editor like vim:
+- After investigating, I realized that default wasn't a directory but a plain configuration file. The correct way to interact with it was by opening it with a text editor like vim:
 
 
 <img src="./img6.png">
 
 
-I also checked if the symbolic link in /etc/nginx/sites-enabled/ was properly pointing to this file:
+- I also checked if the symbolic link in /etc/nginx/sites-enabled/ was properly pointing to this file:
 
 
 <img src="./img7.png">
 
 
-If the link was missing or broken, I recreated it using:
+- If the link was missing or broken, I recreated it using:
 
 `sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/`
 
