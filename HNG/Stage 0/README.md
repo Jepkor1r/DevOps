@@ -74,6 +74,55 @@ During my DevOps internship, I had the opportunity to work on installing and con
 `sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/`
 
 
+🔴 Issue:  Making Nginx Public with Ngrok
+- One of the challenges I faced while working with Nginx was accessing my web server from the internet. Since my system was assigned a private IP address (e.g., 192.168.x.x), it was only accessible within my local network.
+
+- To make my Nginx server publicly accessible, I used Ngrok, a tunneling tool that creates a secure public URL for locally running applications.
+
+🔧 Steps to Install and Set Up Ngrok
+
+1️⃣ Install Ngrok
+- Since I was working on Ubuntu, I installed Ngrok using the following commands:
+
+`curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null`
+
+`echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list`
+
+`sudo apt update && sudo apt install ngrok`
+
+
+🔍 What each command does:
+
+- - The first command adds the official Ngrok GPG key to verify the software’s authenticity.
+- - The second command adds Ngrok’s repository to my system’s package sources.
+- - The third command updates my package list and installs Ngrok.
+
+2️⃣ Authenticate Ngrok with an Authtoken
+- Ngrok requires an authentication token to create secure tunnels. I followed these steps:
+
+- - Signed up for a free account on Ngrok's website.
+
+- - Copied my authentication token from the dashboard.
+
+- - Configured Ngrok with my token using:
+
+`ngrok config add-authtoken YOUR_AUTHTOKEN`
+
+
+3️⃣ Start Ngrok and Expose Nginx
+
+- Once Ngrok was set up, I started a tunnel for port 80 (where Nginx runs) using:
+
+`ngrok http 80`
+
+4️⃣ Getting the Public URL
+
+👉 The public address is listed under "Forwarding".
+
+- - I copied the HTTPS URL and tested it in a browser. 🎉 My locally hosted Nginx page was now accessible to anyone on the internet!
+
+💡 With Ngrok, I successfully made my Nginx server accessible over the internet! 
+
 <strong> 🌱 Learning and Professional Growth:</strong>
 
 This task contributed significantly to my learning in DevOps. It enhanced my understanding of web server management, network configurations, and security practices. Nginx, being lightweight and highly customizable, gave me valuable experience in configuring scalable and reliable systems.
