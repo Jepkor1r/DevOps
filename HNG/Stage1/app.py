@@ -11,8 +11,10 @@ def number(num):
     try:
         # Fetch a fun fact about the number from numbersapi.com
         fun_fact_response = requests.get(f"http://numbersapi.com/{num}?json")
+
+        # If the request to numbersapi fails, return an error
         if fun_fact_response.status_code != 200:
-            return jsonify({"number": "alphabet", "error": True}), 400 
+            return jsonify({"error": "Unable to fetch fun fact for the number."}), 400 
 
         fun_fact = fun_fact_response.json().get("text", "No fun fact available.")
 
@@ -26,11 +28,11 @@ def number(num):
             "is_perfect": is_perfect_square(num),
             "properties": properties,
             "digit_sum": digit_sum(num), 
-            "fun_fact": fun_fact,
+            "fun_fact": fun_fact
         })
 
     except Exception as e:
-        return jsonify({"number": "alphabet", "error": True, "message": str(e)}), 500
+        return jsonify({"error": "Internal server error", "message": str(e)}), 500
 
 # Helper function to check if a number is prime
 def is_prime(n):
@@ -54,8 +56,11 @@ def classify_number(n):
     properties = []
     if armstrong_value == n:
         properties.append("armstrong")
-    
-    properties.append("even" if n % 2 == 0 else "odd")
+
+    if n % 2 == 0:
+        properties.append("even")
+    else:
+        properties.append("odd")
 
     return properties  # Always returns at least ["even"] or ["odd"]
 
