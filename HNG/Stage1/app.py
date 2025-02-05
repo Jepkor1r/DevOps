@@ -6,6 +6,13 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
+def home():
+    # Return JSON response directly at the root route
+    data = {
+        "message": "Welcome to the Flask API!"
+    }
+    return jsonify(data)
+
 @app.route('/api/classify-number/<int:num>', methods=['GET'])
 def number(num):
     try:
