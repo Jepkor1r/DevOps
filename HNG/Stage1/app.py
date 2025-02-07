@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask import request
 from flask_cors import CORS
 import requests  # Import requests to fetch external data (numbersapi.com)
 
@@ -13,28 +14,40 @@ def home():
     }
     return jsonify(data)
 
-@app.route('/api/classify-number/<int:num>', methods=['GET'])
-def number(num):
+@app.route('/api/classify-number', methods=['GET'])
+def number_ap():
+
+    number = request.args.get("number")
+
+    if not number or not is_valid_integer(number):
+        return jsonify({"number": number, "error": True}), 400
+
+    number = int(number) # Convert to integer since flask reads passed numbers as string
     try:
+
+        #use the absolute value of the number for calculations
+        absolute_number = abs(number)
+
         # Fetch a fun fact about the number from numbersapi.com
-        fun_fact_response = requests.get(f"http://numbersapi.com/{num}?json")
+        fun_fact_response = requests.get(f"http://numbersapi.com/{absolute_number}?json")
 
         # If the request to numbersapi fails, return an error
         if fun_fact_response.status_code != 200:
             return jsonify({"error": "Unable to fetch fun fact for the number."}), 400 
 
+        # .get() is a method in python dictionary that returns key(value) if it exists otherwise returns default value(instead of throwing an error)
         fun_fact = fun_fact_response.json().get("text", "No fun fact available.")
 
         # Check if the number is an Armstrong number and get properties
-        properties = classify_number(num)
+        properties = classify_number(absolute_number)
 
         # Prepare the final output
         return jsonify({
-            "number": num,
-            "is_prime": is_prime(num),
-            "is_perfect": is_perfect_square(num),
+            "number": number,
+            "is_prime": is_prime(number),
+            "is_perfect": is_perfect_number(absolute_number),
             "properties": properties,
-            "digit_sum": digit_sum(num), 
+            "digit_sum": digit_sum(absolute_number), 
             "fun_fact": fun_fact
         })
 
@@ -43,16 +56,20 @@ def number(num):
 
 # Helper function to check if a number is prime
 def is_prime(n):
-    if n < 2:
+    if n <=1:  # Prime numbers must be greater than 1
         return False
     for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
             return False
     return True
 
-# Helper function to check if a number is a perfect square
-def is_perfect_square(n):
-    return (n ** 0.5).is_integer()
+# Helper function to check if a number is a perfect number
+def is_perfect_number(n):
+    if n < 1:
+        return False
+    divisors = [i for i in range(1, n) if n % i == 0 ] # Find divisors of the number
+    return sum(divisors) == n    # Check if sum of divisors equals the number
+
 
 # Helper function to determine number properties (Armstrong + Odd/Even)
 def classify_number(n):
@@ -75,5 +92,15 @@ def classify_number(n):
 def digit_sum(n):
     return sum(int(digit) for digit in str(n))
 
+
+# Helper function to check if the number is a valid integer (including negative)
+def is_valid_integer(number):
+    try:
+        int(number)  # Try converting the string to an integer
+        return True
+    except ValueError:
+        return False
+
+        
 if __name__ == '__main__':
     app.run(debug=True)
