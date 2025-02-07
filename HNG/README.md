@@ -13,7 +13,7 @@ In this stage, I explored:
 - Configuring Nginx as a reverse proxy
 - Managing Nginx services and troubleshooting
 
-[👉 Click here to read more](stage0/README.md)
+[👉 Click here to read more](Stage0/README.md)
 
 ---
 
@@ -24,6 +24,6 @@ This stage focused on:
 - Implementing basic machine learning for classification
 - Deploying the API with Nginx
 
-[👉 Click here to explore](stage1/README.md)
+[👉 Click here to explore](Stage1/README.md)
 
 ---
