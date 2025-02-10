@@ -6,7 +6,7 @@ Welcome to my DevOps Journey at HNG Internship! This repository documents the va
 
 ## **Stages Overview**
 
-### 🔹 [Stage 0 - Nginx Installation and Configuration](stage0/README.md)
+### 🔹 [Stage 0 - Nginx Installation and Configuration](Stage0/README.md)
 In this stage, I explored:
 - What is Nginx and why use it?
 - Installing and setting up Nginx
@@ -17,7 +17,7 @@ In this stage, I explored:
 
 ---
 
-### 🔹 [Stage 1 - Number Classification API](stage1/README.md)
+### 🔹 [Stage 1 - Number Classification API](Stage1/README.md)
 This stage focused on:
 - Building a simple API for number classification
 - Using Flask for API development
@@ -27,3 +27,5 @@ This stage focused on:
 [👉 Click here to explore](Stage1/README.md)
 
 ---
+
+### 🔹 [Stage 2 - FastAPI](Stage2/README.md)
