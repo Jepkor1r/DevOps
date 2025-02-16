@@ -27,7 +27,7 @@ This stage focused on:
 ---
 
 ### 🔹 [Stage 2 - FastAPI](Stage2/README.md)
-- This stage is focused on:
+This stage is focused on:
 - Missing Endpoint: The API functions as expected and includes the missing endpoint.
 - CI/CD Setup: The test and deployment workflows are correctly configured.
 - Deployment: The application is successfully deployed and accessible on merge to main.

@@ -1,6 +1,6 @@
 # Deploying a FastAPI Application with CI/CD Pipeline
 
-- I forked [this repository](https://github.com/hngprojects/fastapi-book-project) repo as my starting point.
+I forked [this repository](https://github.com/hngprojects/fastapi-book-project) repo as my starting point.
 
 ## What I worked on:
 
@@ -13,7 +13,7 @@
 
 
 ### 2. Set Up the CI Pipeline
- - Configured the CI pipeline to:
+- Configured the CI pipeline to:
   - Run `pytest` to execute existing tests.
   - Trigger on pull requests to the `main` branch.
   - Contain a job named exactly **test**.
@@ -27,7 +27,7 @@
   - If successful, the site is automatically updated with the latest changes.
 
 
-4. Dockerization Requirement:
+### 4. Dockerization Requirement:
 - Created a `Dockerfile` to package the FastAPI application.
 - The Dockerfile:
   - Uses an official lightweight **Python** image as the base.
