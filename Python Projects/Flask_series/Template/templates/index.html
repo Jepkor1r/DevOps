@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {# The `{{}}` placeholders are used to inject <strong> dynamic</strong> content into the page. These values are set during runtime by the Flask app when it renders this template. #}
+    {# Conditional logic to check if a `title` variable is passed to the template. #}
+
+    {# If `title` exists, it will be displayed along with "- QuoteWeb" in the browser's tab. #}
+
+    {% if title %}
+
+    <title>{{ title }} - QuoteWeb!</title>
+
+    {# If `title` is not provided, a default title "Welcome to QuoteWeb!" will be shown instead. #}
+
+    {% else %}
+
+    <title>Welcome to QuoteWeb!</title>
+
+    {% endif %}
+</head>
+<body>
+
+    {# Display a personalized greeting using the `user.username` variable passed to the template. #}
+    
+    <h1>Hello, {{ user.username }}!</h1>
+
+    {# For loop is used to iterate over a list of posts. Each post is expected to have an `author` (who wrote the post) and a `body` (the content of the post). #}
+    
+    {% for post in posts%}
+
+    {# Display the username of the post's author and the content of the post. #}
+    
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+
+    {% endfor %}
+
+    {# The `for` loop must always end with `{% endfor %}` to close the block. Without this, a syntax error will occur. #}
+
+</body>
+</html>

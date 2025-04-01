@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {# If `title` exists, it will be displayed along with "- QuoteWeb" in the browser's tab. #}
+
+    {% if title %}
+    <title>{{ title }} - QuoteWeb!</title>
+
+    {# If `title` is not provided, a default title "Welcome to QuoteWeb!" will be shown instead. #}
+
+    {% else %}
+    <title>Welcome to QuoteWeb!</title>
+
+    {% endif %}
+</head>
+<body>
+
+    <div>QuoteWeb: <a href="{{ url_for('index') }}">Home</a></div>
+    <hr>
+    {# BLOCK control statement is used to define the place where the derived templates can insert themselves #}
+    
+    {% block content %} {% endblock %}
+</body>
+</html>

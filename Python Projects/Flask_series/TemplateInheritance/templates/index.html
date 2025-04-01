@@ -1,0 +1,23 @@
+{# base template WILL TAKE CARE OF THE GENERAL PAGE STRUCTURE #}
+{# The extends statement establishes the inheritance link between the two templates(index.html and base.html) #} 
+{# This makes Jinja know, that when it is asked to render index.html it needs to embed it inside base.html#}
+
+    {% extends "base.html" %}
+
+    {# The two templates have matching BLOCK statements with name CONTENT#}
+    {# and this is how Jinja knows how to combine the two templates into one. #}
+    {% block content %}
+
+        {# Display a personalized greeting using the `user.username` variable passed to the template. #}
+        <h1>Hello, {{ user.username }}!</h1>
+
+        {# A for loop  to iterate over a list of posts. Each post is expected to have an `author` (who wrote the post)
+        and a `body` (the content of the post). #}
+        {% for post in posts%}
+
+        {# Display the username of the post's author and the content of the post. #}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+        {# The `for` loop must always end with `{% endfor %}` to close the block. Without this, a syntax error will occur. #}
+
+    {% endblock %}
