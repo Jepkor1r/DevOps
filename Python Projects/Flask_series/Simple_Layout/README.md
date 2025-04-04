@@ -1,6 +1,8 @@
-# **SERIES CONTINUATION..**
-- We'll continue building from the first application **(Hello_World)**.
+# **SERIES CONTINUES...**
+- We're building on our first application **(Hello_World)**.
 
-- How about we expand that returned string into a complete HTML page, huh?
+- But this time, we're leveling up. No more just a string...
 
-- *A dzaaamn HTML page, Let's cook da ting!*
+- How about we return a full-blown HTML page instead?
+
+- *A dzaaamn HTML page!🔥 Let's cook da ting!👨‍💻*

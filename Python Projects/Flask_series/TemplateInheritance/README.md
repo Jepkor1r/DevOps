@@ -1,12 +1,10 @@
 # **SERIES CONTINUATION..**
-- We'll continue building from the third application **(Template)**.
+- We're building on the third application **(Template)**.
 
-- Inheritance is a such a blessing, don't you think so? Talk of generational wealth inheritance and the likes!
+-Inheritance is a blessing, right? Talk of generational wealth! Here, we call that **Template Inheritance**.
 
-- Fortunately or unfortunately, right here we'll be doing **Template Inheritance**
+- With Jinja’s template inheritance, we can easily add a navigation bar and keep our layout consistent across pages.
 
-- Jinja has a template inheritance feature that we can easily add a navigation bar. In essence, what we can do is move the parts of the page layout that are common to all templates to a **base template**, from which all other templates are derived.
+- *The idea?* Move all common parts into a base template, like a foundation from which all pages are derived. 
 
-- You could mmemonic base template as foundation where all other templates are derived from just as the navigation bar works right!
-
-- In short, we can create additional pages for an application as derived templates from the same base.html template. Achieving all the pages of an application sharing the same look and feel without duplication.
+- In short: We create new pages without duplication, ensuring they all share the same look and feel.
