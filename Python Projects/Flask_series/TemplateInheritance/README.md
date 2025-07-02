@@ -1,7 +1,7 @@
-# **SERIES CONTINUATION..**
+# **SERIES CONTINUES..**
 - We're building on the third application **(Template)**.
 
--Inheritance is a blessing, right? Talk of generational wealth! Here, we call that **Template Inheritance**.
+- Inheritance is a blessing, right? Talk of generational wealth! Here, we call that **Template Inheritance**.
 
 - With Jinja’s template inheritance, we can easily add a navigation bar and keep our layout consistent across pages.
 

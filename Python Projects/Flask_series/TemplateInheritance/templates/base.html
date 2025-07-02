@@ -14,8 +14,14 @@
     {% endif %}
 </head>
 <body>
+    {# 
+        This navigation bar section creates a simple horizontal menu.
+        The first line shows a text label "QuoteWeb:" with a link to the homepage using `url_for('index')`,
+        which is the dynamic way to generate URLs in Flask.
+    #}
 
     <div>QuoteWeb: <a href="{{ url_for('index') }}">Home</a></div>
+    
     <hr>
     {# BLOCK control statement is used to define the place where the derived templates can insert themselves #}
     

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {# If `title` exists, it will be displayed along with "- QuoteWeb" in the browser's tab. #}
+
+    {% if title %}
+    <title>{{ title }} - QuoteWeb!</title>
+
+    {# If `title` is not provided, a default title "Welcome to QuoteWeb!" will be shown instead. #}
+
+    {% else %}
+    <title>Welcome to QuoteWeb!</title>
+
+    {% endif %}
+</head>
+<body>
+    {# 
+        This is navigation menu which contains hardcoded links to `/index` and `/login`.
+        These work but are less flexible than using `url_for`, which updates automatically if route names change.
+    #}
+    <div>
+        QuoteWeb:
+        <a href="/index">Home</a>
+        <a href="/login">Login</a>
+    </div>
+
+    <hr>   {# A horizontal line for visual separation between nav and content. #}
+
+    {# BLOCK control statement is used to define the place where the derived templates can insert themselves #}
+    {# 
+        This is the most important part: a Jinja `block` named "content".
+        This defines a *placeholder* section that will be overridden by child templates.
+        It allows each specific page (like login.html, index.html) to insert their own custom content
+        while still using this common layout.
+    #}
+    
+    {% block content %} {% endblock %}
+</body>
+</html>
