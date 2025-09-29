@@ -1,0 +1,58 @@
+{# 
+    This Jinja template inherits from `base.html`. 
+    `base.html` defines a common structure (header, footer, navigation, CSS/JS includes).
+    By extending it, this file only needs to define the content that is unique to this page.
+  #}
+
+
+{% extends "base.html" %}
+
+
+{# 
+    This block overrides the `{% block content %}` placeholder defined in `base.html`.
+    All the HTML between `{% block content %}` and `{% endblock %}` will appear in place of that block.
+  #}
+
+
+{% block content %}
+
+<h1>Sign In</h1>
+   {# 
+        HTML <form> element to submit login data. 
+        - action="" means the form submits back to the same URL.
+        - method="post" sends data in the HTTP request body (keeps it out of the URL and browser history — better for sensitive info like passwords, especially on HTTPS)
+        - novalidate disables default HTML5 validation so WTForms handles it instead.
+    #}
+    <form action="" method="post" novalidate>
+        
+
+        {# 
+            CSRF Token (Cross-Site Request Forgery protection).
+            - `form.hidden_tag()` automatically generates hidden input fields,
+              including the CSRF token required by Flask-WTF.
+            - This is critical for security to ensure the request really comes from your site.
+         #}
+
+        
+        {{ form.hidden_tag() }}
+
+
+           {# Username field: shows the label(“Username”) and renders a text input of size 32 #}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}
+            </p>
+
+            {# Password field: shows the label(“Password”) and renders a password input #}
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}
+            </p>
+
+            {# Remember Me checkbox: renders the checkbox and its label(“Remember Me”) #}
+            <p> {{ form.remember_me() }} {{ form.remember_me.label }}</p>
+
+            {# Submit button: Renders the submit button with its label (“Sign In”)#}
+            <p> {{ form.submit() }}</p>
+    </form>
+{% endblock %}

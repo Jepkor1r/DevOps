@@ -1,3 +1,4 @@
+# Most Flask extensions use a flask_<name> naming convention for their top-level import symbol. In this case, Flask-WTF has all its symbols under flask_wtf
 # Import FlaskForm from flask_wtf, which is a base class for creating web forms in Flask
 
 from flask_wtf import FlaskForm
@@ -12,6 +13,7 @@ from wtforms.validators import DataRequired
 
 
 # Define a login form class by inheriting from FlaskForm
+# This gives the class built-in features like CSRF protection and form validation.
 class LoginForm(FlaskForm):
     # A text field for the username with a label 'Username'
     # The DataRequired() validator ensures this field is not submitted empty

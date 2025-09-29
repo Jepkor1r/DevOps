@@ -26,6 +26,32 @@
 
     <hr>   {# A horizontal line for visual separation between nav and content. #}
 
+    {# 
+        Show flashed messages (like "Login requested for user X").
+        - `get_flashed_messages()` returns all messages flashed by `flash()` in Python.
+        - `{% with messages = get_flashed_messages() %}` temporarily assigns them to `messages`.
+    #}
+    
+    {% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+    <ul>
+
+        {# Loop through each message and display it as a list item. #}
+
+        {% for message in messages %}
+
+        <li>{{ message }}</li>
+        
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+
+    {% endwith %}
+
+
     {# BLOCK control statement is used to define the place where the derived templates can insert themselves #}
     {# 
         This is the most important part: a Jinja `block` named "content".
