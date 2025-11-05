@@ -1,12 +1,12 @@
 # 🐳 DOCKER SHORT NOTES!
 
-Dockerfile ~ *Think of it as recipe*
+Dockerfile ~ *Think of it as the recipe*
 
 
-Docker image ~ *Think of it as blueprint*
+Docker image ~ *Think of it as the blueprint*
 
 
-Docker container ~ *This is now the box*
+Docker container ~ *Think of it as the finished box*
 
 ![Must Know Docker Concepts](must-know-docker-concepts.png)
 
@@ -22,86 +22,108 @@ Docker container ~ *This is now the box*
 9. [Docker System Cleanup and Troubleshooting](#docker-system-cleanup-and-troubleshooting)
 ## Dockerfile
 
-- Must be named as **"Dockerfile"** in your project folder
+- Must be named as `Dockerfile` in your project folder
 
 ### Structure
 
 ```Dockerfile
-# Base image to build this image from
+# 🧱 Base image to build from
 FROM <image_id>
 # Example:
 FROM python:3.10-slim
 
-# Executes commands to modify container’s file system state
-RUN <command>             # shell form
-RUN ["executable", "param1", "param2"]   # exec form
-# Example:
-RUN apt-get update && apt-get install -y curl # Reduce image size by cleaning temp files
 
-# Information about the image creator
+# ⚙️ Run commands to modify the container’s filesystem
+RUN <command>                      # shell form
+RUN ["executable", "param1"]       # exec form
+# Example:
+RUN apt-get update && apt-get install -y curl
+
+
+# 👤 Information about the image creator (deprecated, use LABEL instead)
 MAINTAINER <name>
 
-# Adds searchable metadata to the image
+
+# 🏷️ Add searchable metadata to the image
 LABEL <key>=<value>
 # Example:
 LABEL maintainer="you@example.com"
 LABEL version="1.0" description="Simple Flask App"
 
-# Defines build-time variables (only available during build)
+
+# 🧩 Define build-time variables (available only during build)
 ARG <name>[=<default value>]
 # Example:
 ARG APP_VERSION=1.0
 
-# Defines environment variables (available at runtime)
+
+# 🌍 Define environment variables (available at runtime)
 ENV <key>=<value>
 # Example:
 ENV APP_ENV=production
 
-# Add files or remote URLs (auto-extracts archives)
-ADD <src> <dest>          # can fetch URLs and auto-extract archives
+
+# 📦 Add files or remote URLs (auto-extracts archives)
+ADD <src> <dest>
 # Example:
 ADD https://example.com/file.tar.gz /app/
 
-# Copies files/directories into the image
-COPY <src> <dest>         # simple copy (does NOT support URLs)
+
+# 📁 Copy files/directories into the image
+COPY <src> <dest>
 # Example:
 COPY . /app
 
-# Mounts a directory to be shared with host/other containers
-VOLUME ["<path>"]
 
-# Exposes a port to be used at runtime
+# 🔗 Mount a directory shared with host or other containers
+VOLUME ["<path>"]
+# Example:
+VOLUME ["/data"]
+
+
+# 🌐 Expose a port to be used at runtime
 EXPOSE <port>
 # Example:
 EXPOSE 8080
 
-# Sets the working directory for subsequent instructions
+
+# 🏠 Set the working directory for subsequent instructions
 WORKDIR <path>
 # Example:
 WORKDIR /app
 
-# Specifies the user to run commands as
+
+# 👥 Specify the user to run commands as
 USER <username>[:<group>]
+# Example:
+USER appuser
 
-# Defines the signal sent to stop the container
+
+# 🛑 Define the signal sent to stop the container
 STOPSIGNAL <signal>
+# Example:
+STOPSIGNAL SIGKILL
 
-# Sets environment variable for all future CMD/ENTRYPOINT
+
+# 🐚 Set the default shell for all subsequent instructions
 SHELL ["executable", "parameters"]
+# Example:
+SHELL ["/bin/bash", "-c"]
 
-# Defines the default command to execute when container starts
+
+# 🎯 Define the main command to run when the container starts
 ENTRYPOINT ["executable", "param1", "param2"]
 # Example:
 ENTRYPOINT ["python", "app.py"]
 
-# Defines the default command (can be overridden)
+
+# 💬 Default command (can be overridden when running the container)
 CMD ["executable","param1","param2"]   # exec form
-# or
 CMD <command>                          # shell form
 # Example:
 CMD ["python", "app.py"]
+# or
 CMD echo "Hello, Lagat!"
-
 ```
 
 ## Docker Images CLI Commands
@@ -390,8 +412,11 @@ docker version
 
 -----------------------------------------
 
-💡 **Pro Tip:** Use `docker compose` (v2 syntax) instead of `docker-compose` — it’s the newer, integrated version.
+💡 **Pro Tip:** 
+🧱 Use `docker compose` (v2 syntax) instead of `docker-compose` — it’s the newer, integrated version.
 
-🧠 Always tag your images (`:latest`, `:v1`, etc.) to avoid confusion during deployment.
+🏷️ Always tag your images (`:latest`, `:v1`, etc.) to avoid confusion during deployment.
+
+🧠 Prefer smaller base images like `alpine` for lightweight builds
 
 🚀 *Happy Coding!*
