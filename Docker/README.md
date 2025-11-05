@@ -22,42 +22,63 @@ Docker container ~ *This is now the box*
 9. [Docker System Cleanup and Troubleshooting](#docker-system-cleanup-and-troubleshooting)
 ## Dockerfile
 
-- Must be named as "Dockerfile" in your project folder
+- Must be named as **"Dockerfile"** in your project folder
 
 ### Structure
 
 ```Dockerfile
 # Base image to build this image from
 FROM <image_id>
+# Example:
+FROM python:3.10-slim
 
 # Executes commands to modify container’s file system state
 RUN <command>             # shell form
 RUN ["executable", "param1", "param2"]   # exec form
+# Example:
+RUN apt-get update && apt-get install -y curl # Reduce image size by cleaning temp files
 
 # Information about the image creator
 MAINTAINER <name>
 
 # Adds searchable metadata to the image
 LABEL <key>=<value>
+# Example:
+LABEL maintainer="you@example.com"
+LABEL version="1.0" description="Simple Flask App"
 
 # Defines build-time variables (only available during build)
 ARG <name>[=<default value>]
+# Example:
+ARG APP_VERSION=1.0
 
 # Defines environment variables (available at runtime)
 ENV <key>=<value>
+# Example:
+ENV APP_ENV=production
+
+# Add files or remote URLs (auto-extracts archives)
+ADD <src> <dest>          # can fetch URLs and auto-extract archives
+# Example:
+ADD https://example.com/file.tar.gz /app/
 
 # Copies files/directories into the image
-ADD <src> <dest>          # can fetch URLs and auto-extract archives
 COPY <src> <dest>         # simple copy (does NOT support URLs)
+# Example:
+COPY . /app
 
 # Mounts a directory to be shared with host/other containers
 VOLUME ["<path>"]
 
 # Exposes a port to be used at runtime
 EXPOSE <port>
+# Example:
+EXPOSE 8080
 
 # Sets the working directory for subsequent instructions
 WORKDIR <path>
+# Example:
+WORKDIR /app
 
 # Specifies the user to run commands as
 USER <username>[:<group>]
@@ -70,114 +91,17 @@ SHELL ["executable", "parameters"]
 
 # Defines the default command to execute when container starts
 ENTRYPOINT ["executable", "param1", "param2"]
+# Example:
+ENTRYPOINT ["python", "app.py"]
 
 # Defines the default command (can be overridden)
 CMD ["executable","param1","param2"]   # exec form
 # or
 CMD <command>                          # shell form
-```
-
-```bash
-# 🧱 DOCKERFILE INSTRUCTIONS CHEAT SHEET
-
-# -------------------------------------------------------------------
-# 1️⃣ Base Image
-# -------------------------------------------------------------------
-# Defines the starting point (base OS or language environment)
-FROM <image>:<tag>
-# Example:
-FROM python:3.10-slim
-
-# -------------------------------------------------------------------
-# 2️⃣ Labels & Metadata
-# -------------------------------------------------------------------
-# Adds metadata to an image
-LABEL maintainer="you@example.com"
-LABEL version="1.0" description="Simple Flask App"
-
-# -------------------------------------------------------------------
-# 3️⃣ Arguments & Environment Variables
-# -------------------------------------------------------------------
-# Build-time variable (used only while building)
-ARG APP_VERSION=1.0
-
-# Runtime environment variable (persists inside the container)
-ENV APP_ENV=production
-
-# -------------------------------------------------------------------
-# 4️⃣ Working Directory
-# -------------------------------------------------------------------
-# Sets the default working directory inside the container
-WORKDIR /app
-
-# -------------------------------------------------------------------
-# 5️⃣ Copying Files
-# -------------------------------------------------------------------
-# Copy files from host to container
-COPY <src> <dest>
-# Example:
-COPY . /app
-
-# Add files or remote URLs (auto-extracts archives)
-ADD <src> <dest>
-# Example:
-ADD https://example.com/file.tar.gz /app/
-
-# -------------------------------------------------------------------
-# 6️⃣ Installing Dependencies or Running Commands
-# -------------------------------------------------------------------
-# Run shell commands (during image build)
-RUN <command>
-# Example:
-RUN apt-get update && apt-get install -y curl
-
-# -------------------------------------------------------------------
-# 7️⃣ Exposing Ports
-# -------------------------------------------------------------------
-# Document the port the app runs on (for linking or -p mapping)
-EXPOSE <port>
-# Example:
-EXPOSE 8080
-
-# -------------------------------------------------------------------
-# 8️⃣ Volumes
-# -------------------------------------------------------------------
-# Define a mount point for persistent data
-VOLUME ["/data"]
-
-# -------------------------------------------------------------------
-# 9️⃣ Users
-# -------------------------------------------------------------------
-# Switch to a specific user instead of root
-USER <username>
-
-# -------------------------------------------------------------------
-# 🔟 Entry Commands
-# -------------------------------------------------------------------
-# Default command when container starts
-CMD ["executable", "param1", "param2"]
 # Example:
 CMD ["python", "app.py"]
+CMD echo "Hello, Lagat!"
 
-# ENTRYPOINT runs like CMD but is not overridden by args in `docker run`
-ENTRYPOINT ["executable", "param1"]
-# Example:
-ENTRYPOINT ["python", "app.py"]
-
-# -------------------------------------------------------------------
-# 🧩 Combine ENTRYPOINT and CMD
-# -------------------------------------------------------------------
-# ENTRYPOINT defines the base command, CMD defines default args
-ENTRYPOINT ["echo"]
-CMD ["Hello, Captain!"]
-# Running `docker run my-image` → prints "Hello, Captain!"
-# Running `docker run my-image Hi Lagat!` → prints "Hi Lagat!"
-
-# -------------------------------------------------------------------
-# 🧼 Clean up
-# -------------------------------------------------------------------
-# Reduce image size by cleaning temp files
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 ```
 
 ## Docker Images CLI Commands
@@ -213,23 +137,21 @@ docker run -p <host_port>:<container_port> <image_name>
 docker run -d <image_name>
 
 # ▶️ Start or ⏹️ Stop an existing container
-docker start <container_name>
-docker stop <container_name>
-# (You can also use container IDs)
+docker start <container_name> # (You can also use container IDs)
+docker stop <container_name> # (You can also use container IDs)
 
 # 🗑️ Remove a stopped container
 docker rm <container_name>
 
 # 💻 Open an interactive shell inside a running container
-docker exec -it <container_name> sh
-# (Use 'bash' instead of 'sh' if available)
+docker exec -it <container_name> sh # (Use 'bash' instead of 'sh' if available)
 
 # 📜 Fetch and follow the logs of a container
 docker logs -f <container_name>
 
 # 🔍 Inspect detailed information about a container
-docker inspect <container_name>
-# (You can also use container IDs)
+docker inspect <container_name> # (You can also use container IDs)
+
 
 # 📋 List currently running containers
 docker ps
@@ -306,38 +228,38 @@ docker run -d --name web --network my_network nginx
 ## Docker Registry CLI Commands
 
 ```bash
-# Pull an image from a registry (default: Docker Hub)
+# ⬇️ Pull an image from a registry (default: Docker Hub)
 docker pull <image_name>:<tag>
 # Example:
-docker pull nginx:latest
+# docker pull nginx:latest
 
-# Tag an existing local image for a registry
+# 🏷️ Tag an existing local image for a registry
 # Format: docker tag <source_image> <registry_url>/<repository>/<image>:<tag>
 docker tag <image_name>:<tag> <registry_url>/<repo>/<image_name>:<tag>
 # Example (for local registry):
-docker tag nginx:latest localhost:5000/nginx:latest
+# docker tag nginx:latest localhost:5000/nginx:latest
 # Example (for Docker Hub):
-docker tag myapp:latest your_dockerhub_username/myapp:latest
+# docker tag myapp:latest your_dockerhub_username/myapp:latest
 
-# Push an image to a registry
+# 🚀 Push an image to a registry
 docker push <registry_url>/<repo>/<image_name>:<tag>
 # Example:
-docker push your_dockerhub_username/myapp:latest
+# docker push your_dockerhub_username/myapp:latest
 
-# Log in to a registry
+# 🔐 Log in to a registry
 docker login <registry_url>
 # Example (for Docker Hub):
-docker login
+# docker login
 # Then enter your username and password or personal access token
 
-# Run your own private registry
+# 🧱 Run your own private registry
 # Pull the official registry image and run it as a container
 docker run --name my-registry -p 5000:5000 --restart=always -d registry:2
 
-# Verify it's running:
+# 🕵️ Verify it's running
 docker ps
 
-# Push and pull to your local private registry
+# 🔁 Push and pull to your local private registry
 # Tag the image for localhost:5000 (your local registry)
 docker tag nginx:latest localhost:5000/nginx:latest
 
@@ -347,10 +269,10 @@ docker push localhost:5000/nginx:latest
 # Pull it back from the local registry
 docker pull localhost:5000/nginx:latest
 
-# Check what’s stored in your local registry
+# 📂 Check what’s stored in your local registry
 curl -X GET http://localhost:5000/v2/_catalog
 
-# 8️⃣ Delete unused images and clean the registry
+# 🧹 Delete unused images and clean the registry
 docker image prune
 docker container prune
 docker volume prune
@@ -359,63 +281,49 @@ docker volume prune
 ## Docker Compose CLI Commands
 
 ```bash
-# ⚙️ DOCKER COMPOSE CHEAT SHEET
-# Docker Compose simplifies managing multi-container applications.
-# You define services, networks, and volumes in a docker-compose.yml file.
-# -------------------------------------------------------------------
-
-# 1️⃣ Create and start all containers defined in docker-compose.yml
+# 🚀 Create and start all containers defined in docker-compose.yml
 docker compose up
-# Run in detached mode (background)
+
+# 🕶️ Run in detached mode (background)
 docker compose up -d
-# -------------------------------------------------------------------
 
-# 2️⃣ Stop and remove containers, networks, and volumes created by `up`
+# 🧹 Stop and remove containers, networks, and volumes created by `up`
 docker compose down
-# -------------------------------------------------------------------
 
-# 3️⃣ View the running services (containers)
+# 📋 View the running services (containers)
 docker compose ps
-# -------------------------------------------------------------------
 
-# 4️⃣ Stop containers without removing them
+# ⏸️ Stop containers without removing them
 docker compose stop
-# -------------------------------------------------------------------
 
-# 5️⃣ Start containers that were stopped
+# ▶️ Start containers that were stopped
 docker compose start
-# -------------------------------------------------------------------
 
-# 6️⃣ Restart all services
+# 🔁 Restart all services
 docker compose restart
-# -------------------------------------------------------------------
 
-# 7️⃣ View logs from all services
+# 🧾 View logs from all services
 docker compose logs
-# Follow logs in real-time
+
+# 👀 Follow logs in real-time
 docker compose logs -f
-# -------------------------------------------------------------------
 
-# 8️⃣ Build or rebuild images defined in the Compose file
+# 🏗️ Build or rebuild images defined in the Compose file
 docker compose build
-# -------------------------------------------------------------------
 
-# 9️⃣ Run a one-time command inside a running service container
+# 💬 Run a one-time command inside a running service container
 docker compose exec <service_name> <command>
 # Example:
 # docker compose exec web ls /app
-# -------------------------------------------------------------------
 
-# 🔟 Remove stopped service containers
+# 🗑️ Remove stopped service containers
 docker compose rm
-# -------------------------------------------------------------------
 
 # 🧹 Remove all unused data (containers, images, volumes)
 docker system prune
-# -------------------------------------------------------------------
 
 # 🧩 Example docker-compose.yml
-# ----------------------------------------------------------
+
 # version: "3.8"
 # services:
 #   web:
@@ -426,7 +334,6 @@ docker system prune
 #     image: mysql:5.7
 #     environment:
 #       MYSQL_ROOT_PASSWORD: example
-# ----------------------------------------------------------
 ```
 
 ![Docker-compose cheat sheet](docker-compose-cheat-sheet.png)
@@ -458,27 +365,25 @@ docker pull <image_name>
 ## Docker System Cleanup and Troubleshooting
 
 ```bash
-# 🧹 DOCKER CLEANUP & TROUBLESHOOTING
-
-# Remove all stopped containers
+# 🗑️ Remove all stopped containers
 docker container prune
 
-# Remove all unused images
+# 🧼 Remove all unused images
 docker image prune -a
 
-# Remove unused networks
+# 🌐 Remove unused networks
 docker network prune
 
-# Remove unused volumes
+# 💾 Remove unused volumes
 docker volume prune
 
-# Remove EVERYTHING unused (⚠️ be careful!)
+# ⚠️ Remove EVERYTHING unused (containers, images, networks, volumes)
 docker system prune -a --volumes
 
-# Check Docker disk usage
+# 📊 Check Docker disk usage
 docker system df
 
-# Show Docker info and environment
+# 🧠 Show Docker info and environment details
 docker info
 docker version
 ```
