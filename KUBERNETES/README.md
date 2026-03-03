@@ -308,3 +308,13 @@ Calico
 Flannel
 
 AWS VPC CNI (EKS)
+
+
+CURIOUS WHY ABSTRACTION OVER CONTAINERS IN PODS?
+
+A container is a runtime concept, but Kubernetes needs a scheduling and management concept.
+So?
+- A container answers "how do I isolate a process?"
+- A Pod answers "what group of processes must always live and die together?"
+
+Kubernetes schedules Pods, not containers, because the unit of scheduling must match the unit of co-location — and that's almost never a single container in a real system.
