@@ -2,6 +2,7 @@
 
 - **K8s is now your oyster!😎**
 
+
 1. Why Kubernetes Exists (Start Here or Get Lost)
 The Problem Before Kubernetes
 
@@ -40,6 +41,28 @@ Infrastructure abstraction → same setup everywhere
 Kubernetes is an operating system for distributed applications, not servers.
 
 2. Core Kubernetes Architecture (The Big Picture)
+
+                 +----------------------+
+                 |     Control Plane    |
+                 |----------------------|
+                 | API Server           |
+                 | Scheduler            |
+                 | Controller Manager   |
+                 | etcd                 |
+                 +----------+-----------+
+                            |
+                            v
+        +-------------------+-------------------+
+        |                                       |
++---------------+                       +---------------+
+| Worker Node 1 |                       | Worker Node 2 |
+|---------------|                       |---------------|
+| kubelet       |                       | kubelet       |
+| kube-proxy    |                       | kube-proxy    |
+| Pods          |                       | Pods          |
++---------------+                       +---------------+
+
+
 Cluster = Control Plane + Worker Nodes
 Control Plane (The Brain 🧠)
 
@@ -317,4 +340,38 @@ So?
 - A container answers "how do I isolate a process?"
 - A Pod answers "what group of processes must always live and die together?"
 
+| Concept      | Container                          | Pod                                  |
+|-------------|------------------------------------|--------------------------------------|
+| Purpose     | Isolates a process                 | Groups containers together           |
+| Lifecycle   | Runs independently                 | Containers live & die together       |
+| Scheduled by| Runtime (Docker/containerd)        | Kubernetes Scheduler                 |
+| IP Address  | Has its own                        | Shared within pod   
+
 Kubernetes schedules Pods, not containers, because the unit of scheduling must match the unit of co-location — and that's almost never a single container in a real system.
+# ⚠️ Common Beginner Mistakes
+
+- Creating Pods manually instead of Deployments
+- Ignoring resource limits
+- Hardcoding secrets
+- No monitoring/logging
+- Not understanding networking
+
+
+K8 IN CLOUD : EKS ARCHITECTURE
+
+                 Internet
+                    |
+                    v
+               AWS ALB (Ingress)
+                    |
+                    v
+               EKS Cluster
+        +-------------------------+
+        |  Control Plane (AWS)    |
+        +-------------------------+
+                    |
+        +-------------------------+
+        |   Worker Node Group     |
+        |   (EC2 Instances)       |
+        |   Pods running here     |
+        +-------------------------+
