@@ -1,7 +1,0 @@
-appVersion: v1
-kind: Service
-metadata:
-    name: nginx-Service
-spec:
-    selector:-
-    parts:-

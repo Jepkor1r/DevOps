@@ -356,6 +356,7 @@ Kubernetes schedules Pods, not containers, because the unit of scheduling must m
 - No monitoring/logging
 - Not understanding networking
 
+<em> Have you heard of Kubernetes in kubernetes(aka Kubeception)? </em> 
 
 K8 IN CLOUD : EKS ARCHITECTURE
 
