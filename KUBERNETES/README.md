@@ -1,7 +1,8 @@
 # KUBERNETES SHORT NOTES!
 
-- TL;DR
-![K8 CHEAT CODE](K8CheatCode.jpg)
+## TL;DR
+
+![K8 CHEAT CODE](k8-cheat-code.jpg)
 
 - **K8s is now your oyster!😎**
 
