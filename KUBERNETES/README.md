@@ -10,17 +10,22 @@
 
 ### ❌ The Problem Before Kubernetes
 
-Imagine you run: 1 web app on 1 server using Docker
+Imagine you run a simple system:
 
-- Life is good… until:
+- 🖥 **1 Web Application**
+- 🧱 **1 Server**
+- 📦 **Docker Containers**
 
-- - Traffic spikes → app crashes
+Everything works well at first…
 
-- - Server dies → app gone
+Then problems begin:
 
-- - You update code → downtime
+- 🚦 **Traffic spikes** → your application crashes
+- 💥 **Server dies** → your entire system disappears
+- 🔄 **Updating code** → causes downtime
+- 📈 **You need 10 copies** → manual scaling becomes chaos
 
-- - You need 10 copies → chaos
+> ⚠️ This is the reality many systems faced before container orchestration.
 
 ### ✅ What Kubernetes Solves
 
@@ -39,6 +44,7 @@ Imagine you run: 1 web app on 1 server using Docker
 Kubernetes is an operating system for distributed applications, not servers.
 
 ## Core Kubernetes Architecture (The Big Picture)
+
 
                  +----------------------+
                  |     Control Plane    |
