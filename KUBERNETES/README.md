@@ -44,27 +44,27 @@ Then problems begin:
 Kubernetes is an operating system for distributed applications, not servers.
 
 ## Core Kubernetes Architecture (The Big Picture)
-
-
-                 +----------------------+
-                 |     Control Plane    |
-                 |----------------------|
-                 | API Server           |
-                 | Scheduler            |
-                 | Controller Manager   |
-                 | etcd                 |
-                 +----------+-----------+
-                            |
-                            v
-        +-------------------+-------------------+
-        |                                       |
-+---------------+                       +---------------+
-| Worker Node 1 |                       | Worker Node 2 |
-|---------------|                       |---------------|
-| kubelet       |                       | kubelet       |
-| kube-proxy    |                       | kube-proxy    |
-| Pods          |                       | Pods          |
-+---------------+                       +---------------+
+```text
+             +----------------------+
+             |     Control Plane    |
+             |----------------------|
+             | API Server           |
+             | Scheduler            |
+             | Controller Manager   |
+             | etcd                 |
+             +----------+-----------+
+                        |
+                        v
+    +-------------------+-------------------+
+    |                                       |
++---------------+                   +---------------+
+| Worker Node 1 |                   | Worker Node 2 |
+|---------------|                   |---------------|
+| kubelet       |                   | kubelet       |
+| kube-proxy    |                   | kube-proxy    |
+| Pods          |                   | Pods          |
++---------------+                   +---------------+
+```
 
 
 <strong> Cluster = Control Plane + Worker Nodes </strong>
@@ -90,10 +90,12 @@ Kubernetes is an operating system for distributed applications, not servers.
 📌 Analogy
 
 Control plane = factory management
+
 Worker nodes = factory workers
+
 Pods = machines doing work
 
-#### Pods — The Smallest Unit (CRUCIAL)
+## Pods — The Smallest Unit (CRUCIAL)
 
 <em> What is a Pod? </em>
 
@@ -136,7 +138,7 @@ Reality Check:
 - You almost never create pods directly.
 - Controllers do that for you.
 
-### Controllers — The Real Power
+## Controllers — The Real Power
 
 - Controllers maintain desired state.
 
@@ -159,7 +161,7 @@ Reality Check:
 
 📌 Analogy
 
-Deployment = manager saying
+Deployment is manager saying:
 “I want 3 cashiers working at all times.”
 
 #### ReplicaSet
@@ -222,6 +224,7 @@ Provides:
 - Load balancing
 
 Types of Services
+
 - ClusterIP (Default) → Internal access only
 
 - NodePort → Exposes app via node IP + port
@@ -301,11 +304,12 @@ Each pod can request:
 
 - Memory
 
+```yaml
 requests:
   cpu: "250m"
 limits:
   cpu: "500m"
-
+```
 
 📌 Prevents:
 
